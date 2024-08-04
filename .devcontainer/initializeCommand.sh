@@ -12,3 +12,6 @@ docker run --rm \
     -w /var/www/html \
     laravelsail/php83-composer:latest \
     composer install --ignore-platform-reqs
+
+# githook 用のスクリプトを配置するディレクトリを設定する
+git config --local core.hooksPath .githooks
