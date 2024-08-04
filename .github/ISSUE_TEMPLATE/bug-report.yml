@@ -1,0 +1,129 @@
+name: バグ・不具合報告
+title: 'bug: <title>'
+description: 不具合報告issueを設定する場合はこちらのテンプレートをご利用ください。
+labels:
+  - bug
+projects:
+  - y-uchiida/4
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        こちらのissue フォームは、バグ・不具合報告用です。
+        開発作業中や動作テスト中に、不具合と思われる挙動を発見した場合はこちらのフォームから報告をお願いいたします。
+
+  - type: textarea
+    id: bug-report
+    attributes:
+      label: 不具合の概要
+      description: 不具合の内容を具体的に記載してください。
+      placeholder: |
+        入力例）
+        ログイン画面でパスワードを入力するとエラーが発生する
+    validations:
+      required: true
+
+  - type: textarea
+    id: reproduction
+    attributes:
+      label: 不具合の再現手順
+      description: 不具合を再現するための手順、もしくは発生している状況のスクリーンショットやビデオを記載してください。
+      placeholder: |
+        入力例）
+        1. ログイン画面を開く
+        2. ユーザ名を入力する
+        3. パスワードを入力する
+        4. ログインボタンをクリックする
+    validations:
+      required: true
+
+  - type: textarea
+    id: trouble-with-bug
+    attributes:
+      label: 不具合によって困ること
+      description: |
+        不具合が発生したことによる影響を記載してください。
+        例）業務の停滞、データの損失、ユーザーへの影響など
+        困ることの重要度によって対応の優先順位が変わるので、可能なら書いてください。
+      placeholder: |
+        入力例）
+        パスワードを入力するとエラーが発生するため、ログインができない
+
+  - type: textarea
+    id: cause-of-trouble
+    attributes:
+      label: 不具合の原因
+      description: 想定される原因があれば、記載してください。
+      placeholder: |
+        入力例）
+        パスワードの入力文字種のバリデーションで、一部の記号が許可されていない
+
+  - type: textarea
+    id: expected-behavior
+    attributes:
+      label: 期待される挙動
+      description: 本来期待される挙動を記載してください。
+      placeholder: |
+        入力例）
+        パスワードを入力してもエラーが発生しない
+    validations:
+      required: true
+
+  - type: checkboxes
+    id: browser-environment
+    attributes:
+      label: 使用ブラウザ
+      description: |
+        不具合が発生した環境を記載してください。
+        複数のブラウザで動作検証して事象を確認いただいた場合は、発生を確認したものをすべて選択してください。
+      options:
+        - label: "Google Chrome"
+        - label: "Microsoft Edge"
+        - label: "Firefox"
+        - label: "Safari"
+        - label: "その他Chromium系ブラウザ"
+        - label: "その他"
+
+  - type: checkboxes
+    id: os-environment
+    attributes:
+      label: 使用OS
+      description: |
+        不具合が発生したOSを記載してください。
+        複数のOSで動作検証して事象を確認いただいた場合は、発生を確認したものをすべて選択してください。
+      options:
+        - label: "Windows 11"
+        - label: "Windows 10"
+        - label: "macOS"
+        - label: "iOS"
+        - label: "Android"
+        - label: "Linux"
+        - label: "その他"
+
+  - type: textarea
+    id: other-environment
+    attributes:
+      label: その他環境情報
+      description: 不具合が発生した環境に関するその他の情報を記載してください。
+      placeholder: |
+        入力例）
+        ネットワーク環境が不安定な場合に発生する
+
+  - type: textarea
+    id: additional-information
+    attributes:
+      label: その他情報
+      description: 不具合に関するその他の情報を記載してください。
+      placeholder: |
+        入力例）
+        本日の朝にアップデートを行った
+
+  - type: textarea
+    id: reference
+    attributes:
+      label: 備考、実装における参考情報、留意点など
+      description: |
+        不具合に関する参考情報があれば記載してください。
+        入力例）
+        関連するissueやプルリクエスト、参考ページ等があればリンクを貼ってください。

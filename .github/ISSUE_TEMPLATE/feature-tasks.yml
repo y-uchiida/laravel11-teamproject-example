@@ -1,0 +1,83 @@
+name: 機能開発・作業タスク
+title: 'feature: <title>'
+description: 作業タスクを設定する場合はこちらのテンプレートをご利用ください。
+labels:
+  - enhancement
+projects:
+  - y-uchiida/4
+
+body:
+  - type: markdown
+    attributes:
+      value: |
+        こちらのissue フォームは、機能開発・作業タスクの作成用です。
+        新規機能の追加や既存機能の修正、リファクタリングなどの作業を行う場合はこちらのフォームからissueを作成してください。
+
+  - type: textarea
+    id: feature-summary
+    attributes:
+      label: 機能の概要
+      description: 機能の内容を具体的に記載してください。
+      placeholder: |
+        入力例）
+        ログイン画面にパスワードリセット機能を追加する
+    validations:
+      required: true
+
+  - type: textarea
+    id: purpose
+    attributes:
+      label: タスクの目的または達成基準
+      description: タスクの目的や達成基準を記載してください。
+      placeholder: |
+        入力例）
+        ユーザがパスワードを忘れた際に、新しいパスワードを設定できること
+    validations:
+      required: true
+
+  - type: textarea
+    id: background
+    attributes:
+      label: 背景と状況
+      description: 機能追加や修正の背景や状況を記載してください。
+      placeholder: |
+        入力例）
+        ユーザがパスワードを忘れた際に、現在は管理者が手動でリセットしているため、ユーザの負担が大きい
+
+  - type: textarea
+    id: solution
+    attributes:
+      label: 対応方法の案
+      description: |
+        機能追加や修正の方法の案を記載してください。
+        実装にあたって導入したいライブラリなどがあれば記載してください。
+      placeholder: |
+        入力例）
+        パスワードリセット用のAPIを作成し、メールでリセット用のURLを送信する
+
+  - type: textarea
+    id: task-breakdown
+    attributes:
+      label: 作業項目
+      description: |
+        作業内容を細分化できるようであれば、列挙してください。
+      placeholder: |
+        入力例）
+        - [ ] パスワードリセット用のAPIの作成
+        - [ ] メール送信機能の実装
+        - [ ] パスワードリセット画面の作成
+      value: |
+        - [ ] 作業項目名1
+        - [ ] 作業項目名2
+        - [ ] 作業項目名3
+
+  - type: textarea
+    id: notes
+    attributes:
+      label: 備考
+      description: |
+        その他、実装における参考情報や留意点などがあれば記載してください。
+      placeholder: |
+        入力例）
+        - パスワードリセット用のURLは有効期限を設定する
+        - メール送信にはSendGridを利用する
