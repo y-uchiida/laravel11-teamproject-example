@@ -1,27 +1,35 @@
 // https://aka.ms/devcontainer.json
 {
-	"name": "Existing Docker Compose (Extend)",
-	"dockerComposeFile": [
-		"../docker-compose.yml"
-	],
-	"service": "laravel.test",
-	"workspaceFolder": "/var/www/html",
-	"customizations": {
-		"vscode": {
-			"extensions": [
-				// "mikestead.dotenv",
-				// "amiralizadeh9480.laravel-extra-intellisense",
-				// "ryannaddy.laravel-artisan",
-				// "onecentlin.laravel5-snippets",
-				// "onecentlin.laravel-blade"
-			],
-			"settings": {}
-		}
-	},
-	"remoteUser": "sail",
+    "name": "Existing Docker Compose (Extend)",
+    "dockerComposeFile": ["../docker-compose.yml"],
+    "service": "laravel.test",
+    "workspaceFolder": "/var/www/html",
+    "customizations": {
+        "vscode": {
+            "extensions": [
+                "DEVSENSE.phptools-vscode",
+                "mhutchie.git-graph",
+                "bmewburn.vscode-intelephense-client",
+                "xdebug.php-debug",
+                "yzhang.markdown-all-in-one",
+                "DavidAnson.vscode-markdownlint",
+                "open-southeners.laravel-pint",
+                "SanderRonde.phpstan-vscode",
+                "amiralizadeh9480.laravel-extra-intellisense",
+                "codingyu.laravel-goto-view",
+                "shufo.vscode-blade-formatter",
+                "onecentlin.laravel-extension-pack",
+                "vivaxy.vscode-conventional-commits"
+            ],
+            "settings": {}
+        }
+    },
+    "remoteUser": "sail",
     "initializeCommand": [".devcontainer/initializeCommand.sh"],
-	"postCreateCommand": "chown -R 1000:1000 /var/www/html 2>/dev/null || true"
-	// "forwardPorts": [],
-	// "runServices": [],
-	// "shutdownAction": "none",
+    "postCreateCommand": [
+        "chown -R 1000:1000 /var/www/html 2>/dev/null || true"
+    ]
+    // "forwardPorts": [],
+    // "runServices": [],
+    // "shutdownAction": "none",
 }
