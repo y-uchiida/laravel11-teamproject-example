@@ -26,9 +26,7 @@
     },
     "remoteUser": "sail",
     "initializeCommand": [".devcontainer/initializeCommand.sh"],
-    "postCreateCommand": [
-        "chown -R 1000:1000 /var/www/html 2>/dev/null || true"
-    ]
+    "postCreateCommand": [".devcontainer/postCreateCommand.sh"]
     // "forwardPorts": [],
     // "runServices": [],
     // "shutdownAction": "none",
