@@ -50,6 +50,21 @@ services:
                 - '${DB_USERNAME}'
             retries: 3
             timeout: 5s
+
+    # PGWeb のコンテナを追加し、ブラウザ上からデータベースを確認できるようにする
+    pgweb:
+        image: sosedoff/pgweb
+        ports:
+            - "8081:8081"
+        links:
+            - pgsql:pgsql
+        environment:
+            PGWEB_DATABASE_URL: 'postgres://${DB_USERNAME}:${DB_PASSWORD:-secret}@pgsql:${FORWARD_DB_PORT:-5432}/${DB_DATABASE}?sslmode=disable'
+        depends_on:
+            - pgsql
+        networks:
+            - sail
+
     redis:
         image: 'redis:alpine'
         ports:
